@@ -5,7 +5,7 @@ To get running without Apache:
    ./configure
    make; make install
 
-   ./start-siab.sh
+   ./start.sh
 
 You can then access scripts by name of the folder
 in replays/ with the following url pattern
