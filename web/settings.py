@@ -1,5 +1,9 @@
 # Django settings for ttybin project.
 
+import sys, os
+PROJECT_ROOT = "/var/www/ttybin/web"
+sys.path.insert(0, os.path.join(PROJECT_ROOT, "apps"))
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -58,7 +62,7 @@ STATICFILES_ROOT = '/var/www/ttybin/web/static/'
 
 # URL that handles the static files served from STATICFILES_ROOT.
 # Example: "http://static.lawrence.com/", "http://example.com/static/"
-STATICFILES_URL = '/static/'
+STATIC_URL = 'http://ttybin.ldlework.com/static/'
 
 # URL prefix for admin media -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
@@ -66,7 +70,7 @@ STATICFILES_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # A list of locations of additional static files
-STATICFILES_DIRS = ()
+STATICFILES_DIRS = ('/var/www/ttybin/web/static/', )
 
 # List of finder classes that know how to find static files in
 # various locations.
@@ -100,7 +104,16 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/var/www/ttybin/django/templates/'
+    '/var/www/ttybin/web/templates/'
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.contrib.auth.context_processors.auth',
+    'django.contrib.messages.context_processors.messages',
 )
 
 INSTALLED_APPS = (

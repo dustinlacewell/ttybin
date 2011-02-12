@@ -17,13 +17,12 @@ url_parts = urlparse(options.url)
 replay_name = url_parts[4]
 if replay_name:
     try:
-        cwd = path.join(options.path, "replays", replay_name)
-        print "Path is", cwd
+        cwd = path.join(options.path, "web/media/replays", replay_name)
         if path.exists(cwd):
             chdir(cwd)
-            if path.isfile(replay_name + ".rti"):
+            if path.isfile("typescript"):
                 print adstring
-                call(["scriptreplay", replay_name + ".rti"])
+                call(["scriptreplay", "typescript"])
             elif path.isfile("ttyrecord"):
                 print adstring
                 call(["ttyplay", "ttyrecord"])
