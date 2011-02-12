@@ -1,0 +1,19 @@
+header { margin: 10px; width: 100%; display: table}
+
+header #logo_cont { display:table-cell; vertical-align: middle;}
+
+header #logo { font-size: 7px; font-weight: bolder; letter-spacing: 1px; line-height: 5px; }
+
+header #byline {font-size: 12px; font-family: monospace; }
+
+#form_container { font-size: 14px; display:table-cell; vertical-align: middle;}
+
+#form_container ol { list-style: none; }
+
+#form_container ol li { clear:left; }
+
+#form_container ol li label { float:left; text-align: right; width: 10em; margin-right: .6em; }
+
+#form_container form { float:right; }
+
+button { padding-top 5 px; margin-left: 11.1em;}

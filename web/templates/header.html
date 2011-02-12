@@ -1,0 +1,23 @@
+<header>
+<div id="logo_cont">
+<pre id="logo">
+ooooooooooo ooooooooooo ooooo  oooo oooooooooo  o88               
+88  888  88 88  888  88   888  88    888    888 oooo  oo oooooo   
+    888         888         888      888oooo88   888   888   888  
+    888         888         888      888    888  888   888   888  
+   o888o       o888o       o888o    o888ooo888  o888o o888o o888o
+</pre>
+<p id="byline">- The pastebin for terminal recordings</p>
+</div>
+<div id='form_container'>
+ {{ files }}
+ <form action="/" method="post" enctype="multipart/form-data">{% csrf_token %}
+   <ol>
+     <li><label for="id_attachment_file">'ttyrecord' file:</label>{{ form.attachment_file }}</li>
+     <li><label for="id_attachment_name">replay name:</label>{{ form.attachment_name }}</li>
+     <li><button type="submit" >Upload</button></li>
+   </ol>
+ </form>
+</div>
+</header>
+ 

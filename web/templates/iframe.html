@@ -1,0 +1,23 @@
+    <div id="iframe_container">
+      <iframe id="iframe" src="http://ttybin.ldlework.com/r/?{{ replay_name }}" width="100%" scrolling="no">
+	<p>Your browser does not support iframes.</p>
+      </iframe>
+    </div>
+
+    <script type="text/javascript">
+/* from http://stackoverflow.com/questions/325273/make-iframe-to-fit-100-of-containers-remaining-height/330006#330006 */
+function pageY(elem) {
+    return elem.offsetParent ? (elem.offsetTop + pageY(elem.offsetParent)) : elem.offsetTop;
+}
+var buffer = 12; //scroll bar buffer
+function resizeIframe() {
+    var ifm = document.getElementById('iframe');
+    var height = document.documentElement.clientHeight;
+    //ifm.style.marginTop = 10 + 'px';
+    height -= pageY(document.getElementById('iframe'))+ buffer ;
+    height = (height < 0) ? 0 : height;
+    document.getElementById('iframe').style.height = height + 'px';
+}
+document.getElementById('iframe').onload=resizeIframe;
+window.onresize = resizeIframe;
+    </script>
